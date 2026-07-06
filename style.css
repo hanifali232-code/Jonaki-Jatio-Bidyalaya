@@ -494,25 +494,3 @@ footer {
     color: white;
     padding: 40px 20px;
 }
-footer {
-    width: 100vw !important;
-    margin-left: calc(-50vw + 50%) !important;
-    background: #1a1a1a !important;
-    color: #fff !important;
-    padding: 40px 20px 20px 20px;
-    box-sizing: border-box;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.footer-grid h4 { color: #fff; margin-bottom: 15px; }
-.footer-grid a { color: #ccc; text-decoration: none; display: block; margin: 8px 0; }
-.footer-grid a:hover { color: #007bff; }
-.copyright, .designer-credit { text-align: center; margin-top: 20px; font-size: 13px; color: #aaa; }
