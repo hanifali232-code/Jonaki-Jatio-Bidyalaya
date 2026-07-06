@@ -487,3 +487,10 @@ footer p {
         text-align: left;
     }
 }
+footer {
+    width: 100vw !important;
+    margin-left: calc(-50vw + 50%) !important;
+    background: #1a1a1a; /* আপোনাৰ ক'লা ৰং */
+    color: white;
+    padding: 40px 20px;
+}
