@@ -24,8 +24,130 @@
 <a href="notice.html">Notice</a></li><li>
 <a href="result.html">Result</a></li><li>
 <a href="contact.html">Contact</a></li></ul></nav>
-<div class="container bg-white">
-<h2>Admission Form 2026-27</h2><p>নতুন শিক্ষাবৰ্ষৰ বাবে নামভৰ্তি আৰম্ভ হৈছে। তলৰ ফৰ্মখন পূৰণ কৰক।</p>
+  <style>
+  .admission-form { max-width: 750px; margin: 25px auto; padding: 30px; background: #fff; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); font-family: 'Nirmala UI', 'Mukta', sans-serif; }
+  .admission-form h2 { text-align: center; color: #A00000; margin-bottom: 10px; }
+  .admission-form p.sub { text-align:center; margin-bottom:25px; color:#555; }
+  .admission-form label { display: block; margin-top: 15px; font-weight: 600; color: #333; font-size: 15px; }
+  .admission-form input, .admission-form select, .admission-form textarea { width: 100%; padding: 11px; margin-top: 5px; border: 1px solid #ccc; border-radius: 6px; font-size: 15px; box-sizing: border-box; }
+  .admission-form .row { display: flex; gap: 20px; }
+  .admission-form .row .col { flex: 1; }
+  .admission-form .checkbox-group { margin-top: 20px; padding: 12px; background: #f9f9f9; border-radius: 6px; }
+  .admission-form .checkbox-group label { font-weight: normal; display: flex; align-items: flex-start; gap: 10px; }
+  .admission-form button { width: 100%; padding: 14px; background: #A00000; color: #fff; border: none; border-radius: 6px; font-size: 17px; font-weight: bold; margin-top: 25px; cursor: pointer; transition: 0.3s; }
+  .admission-form button:hover { background: #7a0000; }
+  @media(max-width: 650px){ .admission-form .row { flex-direction: column; gap: 0; } .admission-form { padding: 20px; } }
+</style>
+
+<div class="admission-form">
+  <h2>Admission Form 2026-27</h2>
+  <p class="sub">নতুন শিক্ষাবৰ্ষৰ বাবে নামভৰ্তি আৰম্ভ হৈছে। তলৰ ফৰ্মখন পূৰণ কৰক।</p>
+
+  <form action="https://formspree.io/f/xovkrjkw" method="POST">
+    <!-- Note: Formspree ত এই Email ৰে Account খুলি এই Link পাইছো। ইয়াত Submit কৰিলে jonakijatiobidyalaya@gmail.com ত Mail যাব -->
+    
+    <div class="row">
+      <div class="col">
+        <label>Student ID *</label>
+        <input type="text" name="Student ID" required>
+      </div>
+      <div class="col">
+        <label>PEN ID *</label>
+        <input type="text" name="PEN ID" required>
+      </div>
+    </div>
+
+    <label>APAAR ID</label>
+    <input type="text" name="APAAR ID" placeholder="12 digit APAAR ID">
+
+    <label>Name *</label>
+    <input type="text" name="Name" placeholder="As per Aadhaar" required>
+
+    <div class="row">
+      <div class="col">
+        <label>Class *</label>
+        <select name="Class" required>
+          <option value="">Select Class</option>
+          <option>Nursery</option><option>LKG</option><option>UKG</option>
+          <option>Class I</option><option>Class II</option><option>Class III</option>
+          <option>Class IV</option><option>Class V</option><option>Class VI</option>
+          <option>Class VII</option><option>Class VIII</option><option>Class IX</option><option>Class X</option>
+        </select>
+      </div>
+      <div class="col">
+        <label>DOB *</label>
+        <input type="date" name="DOB" required>
+      </div>
+    </div>
+
+    <label>AADHAAR NO</label>
+    <input type="text" name="AADHAAR NO" maxlength="12" placeholder="12 digit Aadhaar Number">
+
+    <div class="row">
+      <div class="col">
+        <label>Father Name *</label>
+        <input type="text" name="Father Name" required>
+      </div>
+      <div class="col">
+        <label>Mother Name *</label>
+        <input type="text" name="Mother Name" required>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <label>Gender *</label>
+        <select name="Gender" required>
+          <option value="">Select</option>
+          <option>Male</option><option>Female</option><option>Other</option>
+        </select>
+      </div>
+      <div class="col">
+        <label>Cast / Category</label>
+        <input type="text" name="Cast" placeholder="General/OBC/SC/ST">
+      </div>
+    </div>
+
+    <label>Postal Address with PIN *</label>
+    <textarea name="Postal Address" rows="3" placeholder="Village, PO, District, PIN" required></textarea>
+
+    <div class="row">
+      <div class="col">
+        <label>Mobile No *</label>
+        <input type="tel" name="Mobile No" pattern="[0-9]{10}" placeholder="10 digit number" required>
+      </div>
+      <div class="col">
+        <label>Previous School name</label>
+        <input type="text" name="Previous School name">
+      </div>
+    </div>
+
+    <label>Previous Class</label>
+    <input type="text" name="Previous Class" placeholder="e.g. Class VIII">
+
+    <label>Elective subject for class IX and X</label>
+    <select name="Elective Subject">
+      <option value="">Select Subject - For IX & X Only</option>
+      <option>Adv. Math</option>
+      <option>Arabic</option>
+      <option>Wood Craft</option>
+      <option>Computer Science</option>
+      <option>Home Science</option>
+    </select>
+
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="Aadhaar Consent" value="Yes" required> 
+      <span>Aadhaar Consent: I/We give consent to the school to collect, use and store my/our Aadhaar details for admission and official records.</span></label>
+    </div>
+
+    <div class="checkbox-group">
+      <label><input type="checkbox" name="Declaration" value="Yes" required> 
+      <span>DECLARATION: I hereby declare that the information given above is true and correct. If any information is found false, my admission can be cancelled.</span></label>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
 <form action="https://formsubmit.co/jonakijatiobidyalaya@gmail.com" method="POST" style="max-width:700px; margin-top:2rem;">
 <input type="hidden" name="_subject" value="নতুন Admission Request!">
 <input type="hidden" name="_captcha" value="false">
