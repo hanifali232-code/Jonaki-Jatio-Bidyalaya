@@ -511,27 +511,22 @@ footer {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 10px;
-  margin-bottom: 25px;
   padding: 20px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-}
-.class-title {
-  font-size: 22px;
-  color: #003366;
-  border-bottom: 2px solid #003366;
-  padding-bottom: 8px;
-  margin-bottom: 15px;
+  overflow-x: auto; /* মোবাইলত scroll হব */
 }
 .book-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 600px;
 }
 .book-table th {
-  background: #f2f2f2;
+  background: #b30000;
+  color: #fff;
   text-align: left;
   padding: 12px;
   font-size: 16px;
-  border-bottom: 2px solid #ccc;
+  border-bottom: 2px solid #800000;
 }
 .book-table td {
   padding: 12px;
@@ -540,10 +535,6 @@ footer {
 }
 .book-table tr:hover {
   background: #fafafa;
-}
-.book-table td:first-child {
-  width: 10%;
-  font-weight: bold;
 }
 .book-table th:first-child {
   width: 12%;
