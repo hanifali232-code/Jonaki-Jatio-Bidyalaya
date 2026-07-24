@@ -494,3 +494,54 @@ footer {
     color: white;
     padding: 40px 20px;
 }
+.book-list-section {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: 'Nirmala UI', 'Arial', sans-serif;
+}
+.book-list-title {
+  text-align: center;
+  font-size: 28px;
+  color: #b30000;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+.class-block {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 25px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+.class-title {
+  font-size: 22px;
+  color: #003366;
+  border-bottom: 2px solid #003366;
+  padding-bottom: 8px;
+  margin-bottom: 15px;
+}
+.book-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.book-table th {
+  background: #f2f2f2;
+  text-align: left;
+  padding: 12px;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+}
+.book-table td {
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 15px;
+}
+.book-table tr:hover {
+  background: #fafafa;
+}
+.book-table td:first-child {
+  width: 10%;
+  font-weight: bold;
+}
