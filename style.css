@@ -554,7 +554,7 @@ footer {
   font-size: 18px;
   font-weight: bold;
   font-family: "Nirmala UI", "Arial", sans-serif;
-  padding: 5px 0;
+  padding: 4px 0;
   overflow: hidden; /* বাহিৰৰ লিখা নেদেখাকৈ ৰাখিব */
   white-space: nowrap; /* লাইন ভাঙি নাযায় */
   border-top: 2px solid #000080;
