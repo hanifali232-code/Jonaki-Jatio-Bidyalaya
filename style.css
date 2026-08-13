@@ -547,3 +547,37 @@ footer {
   background: #fff5f5;
   font-size: 16px;
 }
+.independence-ticker {
+  width: 100%;
+  background: linear-gradient(90deg, #FF9933, #FFFFFF, #138808); /* Tricolor BG */
+  color: #000080; /* Navy Blue text */
+  font-size: 18px;
+  font-weight: bold;
+  font-family: "Nirmala UI", "Arial", sans-serif;
+  padding: 10px 0;
+  overflow: hidden; /* বাহিৰৰ লিখা নেদেখাকৈ ৰাখিব */
+  white-space: nowrap; /* লাইন ভাঙি নাযায় */
+  border-top: 2px solid #000080;
+  border-bottom: 2px solid #000080;
+}
+
+.independence-ticker p {
+  display: inline-block;
+  padding-left: 100%; /* আৰম্ভণি সোঁফালৰ বাহিৰৰ পৰা */
+  animation: scroll-left 20s linear infinite; /* 20 ছেকেণ্ডত এবাৰ যাব */
+}
+
+/* Animation */
+@keyframes scroll-left {
+ 0% {
+    transform: translateX(0);
+  }
+ 100% {
+    transform: translateX(-100%); /* বাওফালে সম্পূৰ্ণ যাব */
+  }
+}
+
+/* Mouse কৰ্চৰ দিলে ৰৈ যাব */
+.independence-ticker:hover p {
+  animation-play-state: paused;
+}
