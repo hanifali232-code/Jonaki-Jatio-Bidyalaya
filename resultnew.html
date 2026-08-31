@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JONAKI JATIO BIDYALAYA - Result 2026-27</title>
+<style>
+  body{font-family:Arial; background:#f0f0f0; margin:0; padding:10px;}
+  .search-box{max-width:450px; margin:50px auto; background:white; padding:25px; border-radius:10px; box-shadow:0 0 10px #ccc;}
+  .search-box h3{text-align:center; color:#000080;}
+  .form-group{margin-bottom:15px; text-align:left;}
+  .form-group label{font-size:14px; font-weight:bold; display:block; margin-bottom:5px;}
+  select, input{padding:12px; width:100%; box-sizing:border-box; border:1px solid #999; border-radius:5px; font-size:15px;}
+  button{padding:12px 20px; background:#000080; color:white; border:none; cursor:pointer; width:100%; border-radius:5px; font-size:16px; margin-top:10px;}
+  button:hover{background:#0000cc;}
+  .marksheet{max-width:850px; margin:20px auto; background:white; padding:20px; border:2px solid #000; display:none;}
+  .header{text-align:center; border-bottom:2px solid #000; padding-bottom:10px;}
+  .header h1{color:#000080; margin:0; font-size:24px;}
+  .info-table{width:100%; margin-top:15px; border-collapse:collapse;}
+  .info-table td{padding:5px 8px; font-size:13px; border:1px solid #000;}
+  .marks-table{width:100%; margin-top:15px; border-collapse:collapse;}
+  .marks-table th, .marks-table td{border:1px solid #000; padding:6px; text-align:center; font-size:13px;}
+  .marks-table th{background:#eee;}
+  .result-box{float:right; border:1px solid #000; margin-top:15px; border-collapse:collapse;}
+  .result-box td{padding:5px 12px; border:1px solid #000; font-size:14px;}
+  @media print{.search-box, .no-print{display:none;} .marksheet{display:block !important; border:none;}}
+</style>
+</head>
+<body>
+
+<div class="search-box" id="searchBox">
+  <h3>Result Check - 2026-27</h3>
+  <div class="form-group"><label>1. Class</label><select id="classInput"><option value="">-- Select Class --</option><option value="ANKUR">ANKUR</option><option value="PP">PP</option><option value="I">I</option><option value="II">II</option><option value="III">III</option><option value="IV">IV</option><option value="V">V</option><option value="VI">VI</option><option value="VII">VII</option><option value="VIII">VIII</option><option value="IX">IX</option><option value="X">X</option></select></div>
+  <div class="form-group"><label>2. Section</label><select id="sectionInput"><option value="">-- Select Section --</option><option value="A">A</option><option value="B">B</option></select></div>
+  <div class="form-group"><label>3. Roll No</label><input type="text" id="rollInput" placeholder="Ex: 2"></div>
+  <button onclick="checkResult()">Check Result</button>
+  <p id="msg" style="color:red; text-align:center; font-size:14px; margin-top:10px;"></p>
+</div>
+
+<div class="marksheet" id="marksheet">
+  <div class="header">
+   <span style="float:left;"><img src="logo.png" class="logo" onerror="this.style.display='none"></span>
+   <h1>JONAKI JATIO BIDYALAYA</h1>
+   <p>SHIMULCHALA, PO : BARKAILA SERSO, PS : FAKIRGANJ<br>DIST.: DHUBRI :: ASSAM :: 783330<br>ESTD. : 2013<br>UDISE+: 1802034137</p>
+   <h3>Marks Sheet - 2026-27</h3>
+ </div>
+  <table class="info-table">
+    <tr><td><b>Name of Student</b></td><td id="s_name"></td><td><b>ID No</b></td><td id="s_adm"></td></tr>
+    <tr><td><b>Class</b></td><td id="s_class"></td><td><b>Section</b></td><td id="s_sec"></td><td><b>Roll No.</b></td><td id="s_roll"></td></tr>
+    <tr><td><b>Gender</b></td><td id="s_gender"></td><td><b>DOB</b></td><td id="s_dob" colspan="3"></td></tr>
+    <tr><td><b>Father's Name</b></td><td id="s_father" colspan="3"></td><td><b>Address</b></td><td id="s_address" colspan="2"></td></tr>
+    <tr><td><b>Mother's Name</b></td><td id="s_mother" colspan="5"></td></tr>
+  </table>
+  <table class="marks-table" id="marksTable"></table>
+  <table class="result-box">
+    <tr><td><b>Grand Total</b></td><td id="m_total"></td></tr>
+    <tr><td><b>Percentage</b></td><td id="m_per"></td></tr>
+    <tr><td><b>Grade</b></td><td id="m_grade"></td></tr>
+    <tr><td><b>Result</b></td><td id="m_result"></td></tr>
+    <tr><td><b>Rank</b></td><td id="m_rank"></td></tr>
+  </table>
+  <div style="clear:both;"></div>
+  <p style="font-size:12px; margin-top:25px;">Note: This is computer generated card, parents can contact admin office for any enquiry within 31 days.</p>
+  <p>Date : 31 March 2027 <span style="float:right;">
+  <img src="sign.png"><br>Signature of Head Master</span>
+
+</p>
+  <br><center class="no-print"><button onclick="window.print()" style="width:auto;">Print</button> <button onclick="location.reload()" style="width:auto; background:#666; margin-left:10px;">New Search</button></center>
+</div>
+
+<script>
+let students = [
+  {
+    "adm": "ADM/26-27/1747", "name": "Nur Amin", "roll": "2", "class": "I", "section": "A", "dob": "03/02/2021", "gender": "Male",
+    "father": "Joynuddin Ahmed", "mother": "Nureza Khatun", "address": "Shimulchala",
+    "en1": 15, "en2": 18, "en3": 14, "en4": 20, "enFM":300, "as1": 12, "as2": 15, "as3": 13, "as4": 18, "asFM":300, "mt1": 20, "mt2": 19, "mt3": 20, "mt4": 25, "mtFM":300, "ss1": 14, "ss2": 16, "ss3": 15, "ss4": 20, "ssFM":300, "sc1": 15, "sc2": 17, "sc3": 16, "sc4": 22, "scFM":300, "aag1": 10, "aag2": 10, "aag3": 10, "aag4": 10, "aagFM":300, "hpw1": 10, "hpw2": 10, "hpw3": 10, "hpw4": 10, "hpwFM":300
+  },
+  {
+    "adm": "ADM/26-27/1748", "name": "Rahul Das", "roll": "3", "class": "I", "section": "A", "dob": "01/01/2020", "gender": "Male",
+    "father": "Ramen Das", "mother": "Mina Das", "address": "Barkajia",
+    "en1": 10, "en2": 12, "en3": 11, "en4": 15, "enFM":300, "as1": 10, "as2": 11, "as3": 12, "as4": 14, "asFM":300, "mt1": 15, "mt2": 14, "mt3": 16, "mt4": 20, "mtFM":300, "ss1": 12, "ss2": 13, "ss3": 12, "ss4": 18, "ssFM":300, "sc1": 13, "sc2": 14, "sc3": 13, "sc4": 19, "scFM":300, "aag1": 8, "aag2": 9, "aag3": 9, "aag4": 10,"aagFM":300, "hpw1": 9, "hpw2": 9, "hpw3": 9, "hpw4": 10, "hpwFM":300
+  }
+];
+
+function getGrade(per, isPass){
+  if(!isPass) return "-";
+  if(per >= 90) return "A+";
+  if(per >= 80) return "A";
+  if(per >= 70) return "B+";
+  if(per >= 60) return "B";
+  if(per >= 50) return "C";
+  if(per >= 33) return "D";
+  return "-";
+}
+
+function checkResult(){
+  let cls = document.getElementById('classInput').value.trim();
+  let sec = document.getElementById('sectionInput').value.trim();
+  let roll = document.getElementById('rollInput').value.trim();
+  let msg = document.getElementById('msg');
+  if(!cls || !sec || !roll){ msg.innerText = "Please Select Class, Section and Roll"; return; }
+  msg.innerText = "";
+  let s = students.find(x => x.class.toUpperCase() == cls.toUpperCase() && x.section.toUpperCase() == sec.toUpperCase() && x.roll.toString() == roll.toString());
+  if(!s){ msg.innerText = "Result Not Found for ("+cls+" - "+sec+" - "+roll+")"; return; }
+  
+  document.getElementById('s_name').innerText = s.name;
+  document.getElementById('s_adm').innerText = s.adm;
+  document.getElementById('s_class').innerText = s.class;
+  document.getElementById('s_sec').innerText = s.section;
+  document.getElementById('s_roll').innerText = s.roll;
+  document.getElementById('s_gender').innerText = s.gender || '';
+  document.getElementById('s_dob').innerText = s.dob || '';
+  document.getElementById('s_father').innerText = s.father || '';
+  document.getElementById('s_mother').innerText = s.mother || '';
+  document.getElementById('s_address').innerText = s.address || '';
+
+  let sum = (a,b,c,d) => (Number(a)||0)+(Number(b)||0)+(Number(c)||0)+(Number(d)||0);
+  let enT = sum(s.en1,s.en2,s.en3,s.en4), asT = sum(s.as1,s.as2,s.as3,s.as4), mtT = sum(s.mt1,s.mt2,s.mt3,s.mt4), ssT = sum(s.ss1,s.ss2,s.ss3,s.ss4), scT = sum(s.sc1,s.sc2,s.sc3,s.sc4), aagT = sum(s.aag1,s.aag2,s.aag3,s.aag4), hpwT = sum(s.hpw1,s.hpw2,s.hpw3,s.hpw4);
+  let grand = enT+asT+mtT+ssT+scT+aagT+hpwT;
+  let totalFM = (Number(s.enFM)||0)+(Number(s.asFM)||0)+(Number(s.mtFM)||0)+(Number(s.scFM)||0)+(Number(s.ssFM)||0)+(Number(s.aagFM)||0)+(Number(s.hpwFM)||0);
+  let per = totalFM > 0 ? ((grand / totalFM) * 100) : 0;
+  let isPass = per >= 33;
+  let grade = getGrade(per, isPass);
+
+  document.getElementById('marksTable').innerHTML = `
+    <tr><th>Sl</th><th>Subject</th><th>1st Unit</th><th>HY</th><th>2nd Unit</th><th>Annual</th><th>Full Marks</th><th>Obtained</th></tr>
+    <tr><td>1</td><td>English</td><td>${s.en1||0}</td><td>${s.en2||0}</td><td>${s.en3||0}</td><td>${s.en4||0}</td><td>${s.enFM||0}</td><td><b>${enT}</b></td></tr>
+    <tr><td>2</td><td>Assamese</td><td>${s.as1||0}</td><td>${s.as2||0}</td><td>${s.as3||0}</td><td>${s.as4||0}</td><td>${s.asFM||0}</td><td><b>${asT}</b></td></tr>
+    <tr><td>3</td><td>Maths</td><td>${s.mt1||0}</td><td>${s.mt2||0}</td><td>${s.mt3||0}</td><td>${s.mt4||0}</td><td>${s.mtFM||0}</td><td><b>${mtT}</b></td></tr>
+    <tr><td>4</td><td>Science</td><td>${s.sc1||0}</td><td>${s.sc2||0}</td><td>${s.sc3||0}</td><td>${s.sc4||0}</td><td>${s.scFM||0}</td><td><b>${scT}</b></td></tr>
+    <tr><td>5</td><td>Social Sc.</td><td>${s.ss1||0}</td><td>${s.ss2||0}</td><td>${s.ss3||0}</td><td>${s.ss4||0}</td><td>${s.ssFM||0}</td><td><b>${ssT}</b></td></tr>
+    <tr><td>6</td><td>Arabic/ Adv.Math/ G.K.</td><td>${s.aag1||0}</td><td>${s.aag2||0}</td><td>${s.aag3||0}</td><td>${s.aag4||0}</td><td>${s.aagFM||0}</td><td><b>${aagT}</b></td></tr>
+    <tr><td>7</td><td>Hindi/ Poribesh/ Wood Craft</td><td>${s.hpw1||0}</td><td>${s.hpw2||0}</td><td>${s.hpw3||0}</td><td>${s.hpw4||0}</td><td>${s.hpwFM||0}</td><td><b>${hpwT}</b></td></tr>
+    <tr style="background:#eee; font-weight:bold;"><td colspan="6" style="text-align:right;">Total</td><td>${totalFM}</td><td>${grand}</td></tr>
+  `;
+
+  document.getElementById('m_total').innerText = grand;
+  document.getElementById('m_per').innerText = per.toFixed(2) + "%";
+  document.getElementById('m_grade').innerText = grade;
+  document.getElementById('m_result').innerText = isPass ? "PASS" : "FAIL";
+
+  let sumAll = (st) => (Number(st.en1)||0)+(Number(st.en2)||0)+(Number(st.en3)||0)+(Number(st.en4)||0)+(Number(st.as1)||0)+(Number(st.as2)||0)+(Number(st.as3)||0)+(Number(st.as4)||0)+(Number(st.mt1)||0)+(Number(st.mt2)||0)+(Number(st.mt3)||0)+(Number(st.mt4)||0)+(Number(st.sc1)||0)+(Number(st.sc2)||0)+(Number(st.sc3)||0)+(Number(st.sc4)||0)+(Number(st.ss1)||0)+(Number(st.ss2)||0)+(Number(st.ss3)||0)+(Number(st.ss4)||0)+(Number(st.aag1)||0)+(Number(st.aag2)||0)+(Number(st.aag3)||0)+(Number(st.aag4)||0)+(Number(st.hpw1)||0)+(Number(st.hpw2)||0)+(Number(st.hpw3)||0)+(Number(st.hpw4)||0);
+  let sameClass = students.filter(x => x.class.toUpperCase() == s.class.toUpperCase() && x.section.toUpperCase() == s.section.toUpperCase());
+  sameClass.sort((a,b) => sumAll(b) - sumAll(a));
+  let rank = sameClass.findIndex(x => x.roll.toString() == s.roll.toString()) + 1;
+  document.getElementById('m_rank').innerText = rank;
+
+  document.getElementById('searchBox').style.display='none';
+  document.getElementById('marksheet').style.display='block';
+}
+</script>
+</body>
+</html>
