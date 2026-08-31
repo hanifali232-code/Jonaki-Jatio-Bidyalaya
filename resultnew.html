@@ -69,33 +69,27 @@
 </div>
 
 <script>
-let students = [];
-fetch('students.json')
-.then(r=>r.json())
-.then(data=>{
-  students = data;
-  console.log("Total Loaded: " + students.length);
-});
+<script src="./students.js></script>
 
 function checkResult(){
   let c = document.getElementById('class').value.trim().toUpperCase();
-  let secValue = document.getElementById('section').value.trim().toUpperCase();
+  let s = document.getElementById('section').value.trim().toUpperCase();
   let r = document.getElementById('roll').value.trim();
 
-  console.log("Searching:", c, secValue, r);
+  console.log("Searching:", c, s, r, "Total:", students.length);
 
-  let found = students.find(st=>{
-    let stClass = String(st.class || "").trim().toUpperCase();
-    let stSec = String(st.sec || st.section || "").trim().toUpperCase(); // sec আৰু section দুয়োটা Support কৰিব
-    let stRoll = String(st.roll || "").trim();
-    return stClass == c && stSec == secValue && stRoll == r;
+  let allMatched = students.filter(st=>{
+    let stC = String(st.class||"").trim().toUpperCase();
+    let stS = String(st.sec || st.section || "").trim().toUpperCase();
+    let stR = String(st.roll||"").trim();
+    return stC===c && stS===s && stR===r;
   });
 
-  if(found){
-    console.log("Found:", found);
-    showMarksheet(found); // আপোনাৰ Marksheet দেখুওৱা Function
+  if(allMatched.length > 0){
+    // যদি একেটা Roll ত ২ জন থাকে প্ৰথম জনক দেখুৱাব
+    showMarksheet(allMatched[0]);
   } else {
-    alert("Result পোৱা নগল! JSON ত Roll 8, Class IX, Section A আছেনে চাওক।");
+    alert("Not Found! File ত আছে Total: "+students.length+" জন।\nআপুনি বিচাৰিছে: "+c+" - "+s+" - "+r+"\n\nBrowser Cache Clear কৰি আকৌ চাওক।");
   }
 }
  
