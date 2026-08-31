@@ -17786,14 +17786,7 @@ let students = [
     "Obtained": "xx",
     "scFM": "xx"
   }
-];];
-  
-fetch('students.json')
-  .then(res => res.json())
-  .then(data => {
-    students = data;
-    console.log(students.length + "ছাত্ৰ Load হল");
-  });
+];
 
 function getGrade(per, isPass){
   if(!isPass) return "-";
