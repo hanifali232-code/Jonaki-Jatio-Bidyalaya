@@ -1,4 +1,4 @@
-[
+const students = [
   {
     "adm": "ADM/26-27/1747",
     "class": "ANKUR",
@@ -17691,4 +17691,4 @@
     "aagFM": 300,
     "hpwFM": 300
   }
-]
+];
