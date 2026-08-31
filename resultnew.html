@@ -68,30 +68,8 @@
   <br><center class="no-print"><button onclick="window.print()" style="width:auto;">Print</button> <button onclick="location.reload()" style="width:auto; background:#666; margin-left:10px;">New Search</button></center>
 </div>
 
-
 <script src="students.js"></script>
 <script>
-function checkResult(){
-  let c = document.getElementById('class').value.trim().toUpperCase();
-  let s = document.getElementById('section').value.trim().toUpperCase();
-  let r = document.getElementById('roll').value.trim();
-
-  console.log("Searching:", c, s, r, "Total:", students.length);
-
-  let allMatched = students.filter(st=>{
-    let stC = String(st.class||"").trim().toUpperCase();
-    let stS = String(st.sec || st.section || "").trim().toUpperCase();
-    let stR = String(st.roll||"").trim();
-    return stC===c && stS===s && stR===r;
-  });
-
-  if(allMatched.length > 0){
-    // যদি একেটা Roll ত ২ জন থাকে প্ৰথম জনক দেখুৱাব
-    showMarksheet(allMatched[0]);
-  } else {
-    alert("Not Found! File ত আছে Total: "+students.length+" জন।\nআপুনি বিচাৰিছে: "+c+" - "+s+" - "+r+"\n\nBrowser Cache Clear কৰি আকৌ চাওক।");
-  }
- 
 function getGrade(per, isPass){
   if(!isPass) return "-";
   if(per >= 90) return "A+";
@@ -110,13 +88,21 @@ function checkResult(){
   let msg = document.getElementById('msg');
   if(!cls || !sec || !roll){ msg.innerText = "Please Select Class, Section and Roll"; return; }
   msg.innerText = "";
-  let s = students.find(x => x.class.toUpperCase() == cls.toUpperCase() && x.section.toUpperCase() == sec.toUpperCase() && x.roll.toString() == roll.toString());
-  if(!s){ msg.innerText = "Result Not Found for ("+cls+" - "+sec+" - "+roll+")"; return; }
+
+  // sec আৰু section দুয়োটাই চাব
+  let s = students.find(x => {
+    let c1 = String(x.class||"").toUpperCase().trim();
+    let s1 = String(x.section || x.sec || "").toUpperCase().trim();
+    let r1 = String(x.roll||"").trim();
+    return c1 == cls.toUpperCase() && s1 == sec.toUpperCase() && r1 == roll;
+  });
+
+  if(!s){ msg.innerText = "Result Not Found for ("+cls+" - "+sec+" - "+roll+") Total Loaded: "+students.length; return; }
   
   document.getElementById('s_name').innerText = s.name;
   document.getElementById('s_adm').innerText = s.adm;
   document.getElementById('s_class').innerText = s.class;
-  document.getElementById('s_sec').innerText = s.section;
+  document.getElementById('s_sec').innerText = s.section || s.sec;
   document.getElementById('s_roll').innerText = s.roll;
   document.getElementById('s_gender').innerText = s.gender || '';
   document.getElementById('s_dob').innerText = s.dob || '';
@@ -150,9 +136,9 @@ function checkResult(){
   document.getElementById('m_result').innerText = isPass ? "PASS" : "FAIL";
 
   let sumAll = (st) => (Number(st.en1)||0)+(Number(st.en2)||0)+(Number(st.en3)||0)+(Number(st.en4)||0)+(Number(st.as1)||0)+(Number(st.as2)||0)+(Number(st.as3)||0)+(Number(st.as4)||0)+(Number(st.mt1)||0)+(Number(st.mt2)||0)+(Number(st.mt3)||0)+(Number(st.mt4)||0)+(Number(st.sc1)||0)+(Number(st.sc2)||0)+(Number(st.sc3)||0)+(Number(st.sc4)||0)+(Number(st.ss1)||0)+(Number(st.ss2)||0)+(Number(st.ss3)||0)+(Number(st.ss4)||0)+(Number(st.aag1)||0)+(Number(st.aag2)||0)+(Number(st.aag3)||0)+(Number(st.aag4)||0)+(Number(st.hpw1)||0)+(Number(st.hpw2)||0)+(Number(st.hpw3)||0)+(Number(st.hpw4)||0);
-  let sameClass = students.filter(x => x.class.toUpperCase() == s.class.toUpperCase() && x.section.toUpperCase() == s.section.toUpperCase());
+  let sameClass = students.filter(x => String(x.class||"").toUpperCase()==s.class.toUpperCase() && String(x.section||x.sec||"").toUpperCase()==(s.section||s.sec||"").toUpperCase());
   sameClass.sort((a,b) => sumAll(b) - sumAll(a));
-  let rank = sameClass.findIndex(x => x.roll.toString() == s.roll.toString()) + 1;
+  let rank = sameClass.findIndex(x => String(x.roll)==String(s.roll)) + 1;
   document.getElementById('m_rank').innerText = rank;
 
   document.getElementById('searchBox').style.display='none';
