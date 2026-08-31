@@ -39,7 +39,7 @@
 
 <div class="marksheet" id="marksheet">
   <div class="header">
-   <span style="float:left;"><img src="logo.png" class="logo" onerror="this.style.display='none"></span>
+   <span style="float:left;"><img src="logo.png" class="logo" style="width:48px; height:48px; object-fit:contain;" onerror="this.style.display='none'"></span>
    <h1>JONAKI JATIO BIDYALAYA</h1>
    <p>SHIMULCHALA, PO : BARKAILA SERSO, PS : FAKIRGANJ<br>DIST.: DHUBRI :: ASSAM :: 783330<br>ESTD. : 2013<br>UDISE+: 1802034137</p>
    <h3>Marks Sheet - 2026-27</h3>
@@ -70,6 +70,13 @@
 
 <script>
 let students = [];
+  
+fetch('students.json')
+  .then(res => res.json())
+  .then(data => {
+    students = data;
+    console.log(students.length + "ছাত্ৰ Load হল");
+  });
 
 function getGrade(per, isPass){
   if(!isPass) return "-";
