@@ -17690,29 +17690,5 @@ let students = [
     "scFM": 300,
     "aagFM": 300,
     "hpwFM": 300
-  },
-  {
-    "name": "Abu Lise",
-    "roll": 35,
-    "sc1": 15,
-    "scT": 15
-  },
-  {
-    "roll": 36
-  },
-  {
-    "roll": "xx",
-    "as2": "x",
-    "mt2": "xx",
-    "ss3": "xx",
-    "sc4": "x",
-    "aag2": "x",
-    "hpw2": "xx",
-    "asT": "x",
-    "mtT": "x",
-    "aagT": "x",
-    "hpwT": "x",
-    "Obtained": "xx",
-    "scFM": "xx"
   }
-];
+]
