@@ -115,7 +115,7 @@ function checkResult(){
   let grand = enT+asT+mtT+ssT+scT+aagT+hpwT;
   let totalFM = (Number(s.enFM)||0)+(Number(s.asFM)||0)+(Number(s.mtFM)||0)+(Number(s.scFM)||0)+(Number(s.ssFM)||0)+(Number(s.aagFM)||0)+(Number(s.hpwFM)||0);
   let per = totalFM > 0 ? ((grand / totalFM) * 100) : 0;
-  let isPass = per >= 33;
+  let isPass = per >= 30;
   let grade = getGrade(per, isPass);
 
   document.getElementById('marksTable').innerHTML = `
