@@ -1709,7 +1709,7 @@ const students = [
   {
     "adm": 995,
     "dob": "28-11-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "UMME KULSUM",
     "father": "NUR ZAMAL",
@@ -1749,7 +1749,7 @@ const students = [
   {
     "adm": 1013,
     "dob": "20-10-2017",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ROHIMA KHATUN",
     "father": "NURZAMAL HOQUE",
@@ -1789,7 +1789,7 @@ const students = [
   {
     "adm": 953,
     "dob": "15-10-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ALIMA KHATUN",
     "father": "AKBAR ALI",
@@ -1829,7 +1829,7 @@ const students = [
   {
     "adm": 994,
     "dob": 43626,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ARJINA KHATUN",
     "father": "LAL BAHADUR SHEIKH",
@@ -1869,7 +1869,7 @@ const students = [
   {
     "adm": 954,
     "dob": "15-10-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ALIMA KHATUN",
     "father": "AKBAR ALI",
@@ -1909,7 +1909,7 @@ const students = [
   {
     "adm": 1024,
     "dob": "23-11-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "SHAMORTO VANUE",
     "father": "SOPIAL ALOM",
@@ -1949,7 +1949,7 @@ const students = [
   {
     "adm": 973,
     "dob": "20-01-2019",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MAMONI KHATUN",
     "father": "AFJALUR RAHMAN",
@@ -1989,7 +1989,7 @@ const students = [
   {
     "adm": 897,
     "dob": "18-11-2016",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ABIDA KHATUN",
     "father": "MOMIR UDDIN",
@@ -2029,7 +2029,7 @@ const students = [
   {
     "adm": 1027,
     "dob": "31-12-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "JORINA KHATUN",
     "father": "SADEQUE ALI",
@@ -2101,7 +2101,7 @@ const students = [
   {
     "adm": 1033,
     "dob": "14-12-2019",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MURSHIDA KHATUN",
     "father": "NURAL HOQUE",
@@ -2141,7 +2141,7 @@ const students = [
   {
     "adm": 1006,
     "dob": "19-09-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "NUR BHANU BIBI",
     "father": "SARAKAT ALI",
@@ -2181,7 +2181,7 @@ const students = [
   {
     "adm": 1004,
     "dob": 42826,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "HAMIDA KHATUN",
     "father": "KADAM ALI",
@@ -2221,7 +2221,7 @@ const students = [
   {
     "adm": 1097,
     "dob": "28-09-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "ZAMIRON NESSA",
     "father": "MONER UDDIN MOLLAH",
@@ -2261,7 +2261,7 @@ const students = [
   {
     "adm": 997,
     "dob": 43355,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "AKLIMA KHATUN",
     "father": "ROFIQUL ISLAM",
@@ -2301,7 +2301,7 @@ const students = [
   {
     "adm": 1034,
     "dob": "13-01-2019",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MOFINA BAGOM",
     "father": "NUR AMIN",
@@ -2341,7 +2341,7 @@ const students = [
   {
     "adm": 1042,
     "dob": "29-06-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "SHONEKA KHATUN",
     "father": "SHAHA ALOM",
@@ -2381,7 +2381,7 @@ const students = [
   {
     "adm": 1053,
     "dob": 42259,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MOMOTAZ BEGUM",
     "father": "ABDUL MOZID",
@@ -2421,7 +2421,7 @@ const students = [
   {
     "adm": 1049,
     "dob": "28-07-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MAFUJA KHATUN",
     "father": "HASMOT ALI",
@@ -2461,7 +2461,7 @@ const students = [
   {
     "adm": 1041,
     "dob": 43562,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "SALMA KHATUN",
     "father": "ANISUR RAHMAN",
@@ -2501,7 +2501,7 @@ const students = [
   {
     "adm": 1046,
     "dob": 42769,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MONOWARA KHATUN",
     "father": "MIJANUR ISLAM",
@@ -2541,7 +2541,7 @@ const students = [
   {
     "adm": 1058,
     "dob": "19-12-2024",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "father": "AZAHAR ALI",
     "address": "BHAGAR PAR",
@@ -2577,7 +2577,7 @@ const students = [
   {
     "adm": 1070,
     "dob": 42769,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ANOWARA KHATUN",
     "father": "BABUR ALI",
@@ -2617,7 +2617,7 @@ const students = [
   {
     "adm": 1093,
     "dob": "22-01-2017",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "NILIMA KHATUN",
     "father": "MOYNAL HOQUE",
@@ -2657,7 +2657,7 @@ const students = [
   {
     "adm": 1096,
     "dob": "15-12-2017",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ZAMIRON NESSA",
     "father": "MONER UDDIN MOLLAH",
@@ -2728,7 +2728,7 @@ const students = [
   {
     "adm": 1095,
     "dob": 42863,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "MONOWARA BIBI",
     "father": "AYAN UDDIN MOLLAH",
@@ -2768,7 +2768,7 @@ const students = [
   {
     "adm": 1104,
     "dob": 43320,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "A",
     "mother": "ROKIA KHATUN",
     "father": "AKSADUR RAHMAN",
@@ -2871,7 +2871,7 @@ const students = [
   {
     "adm": 1145,
     "dob": 43387,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SAHERA KHATUN",
     "father": "SOHOR ALI",
@@ -2908,7 +2908,7 @@ const students = [
   {
     "adm": 1146,
     "dob": 42961,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "MORZINA KHATUN",
     "father": "MONOWAR HOSSAIN",
@@ -2943,7 +2943,7 @@ const students = [
   {
     "adm": 999,
     "dob": 42005,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SOKINA KHATUN",
     "father": "ABU HANNAN",
@@ -2983,7 +2983,7 @@ const students = [
   {
     "adm": 820,
     "dob": 43354,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SOKINA KHATUN",
     "father": "ABU HANNAN",
@@ -3023,7 +3023,7 @@ const students = [
   {
     "adm": 988,
     "dob": "24-08-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "ASMA KHATUN",
     "father": "SOHOR ALI",
@@ -3063,7 +3063,7 @@ const students = [
   {
     "adm": 963,
     "dob": "23-09-2019",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "FIROZA KHATUN",
     "father": "JAKIR ALI",
@@ -3103,7 +3103,7 @@ const students = [
   {
     "adm": 1035,
     "dob": 42376,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "MOMIRON NESSA",
     "father": "SULTAN ALI",
@@ -3143,7 +3143,7 @@ const students = [
   {
     "adm": 992,
     "dob": "17-02-2019",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "HABIYA KHATUN",
     "father": "ROFIQUL ISLAM",
@@ -3183,7 +3183,7 @@ const students = [
   {
     "adm": 1015,
     "dob": "20-10-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "AKIDA BEGUM",
     "father": "SHOHID ALI",
@@ -3223,7 +3223,7 @@ const students = [
   {
     "adm": 1001,
     "dob": "17-04-2024",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "RASIDA KHATUN",
     "father": "MUSA SHEIKH",
@@ -3263,7 +3263,7 @@ const students = [
   {
     "adm": 955,
     "dob": 43224,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "KUKILA KHATUN",
     "father": "NOZRUL ISLAM",
@@ -3303,7 +3303,7 @@ const students = [
   {
     "adm": 958,
     "dob": "28-02-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SUPIA KHATUN",
     "father": "ROWSHON ALOM",
@@ -3342,7 +3342,7 @@ const students = [
   {
     "adm": 979,
     "dob": "27-12-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "AFRINA KHATUN",
     "father": "SHOWKAT ALI",
@@ -3382,7 +3382,7 @@ const students = [
   {
     "adm": 1003,
     "dob": "20-12-2016",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "FATEMA KHATUN",
     "father": "REZZAQUE ALI",
@@ -3422,7 +3422,7 @@ const students = [
   {
     "adm": 969,
     "dob": "24-02-2017",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SHAHIDA KHATUN",
     "father": "SUKUR ALI",
@@ -3462,7 +3462,7 @@ const students = [
   {
     "adm": 1022,
     "dob": 43739,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "AKLIMA KHATUN ",
     "father": "SUMON ALI",
@@ -3502,7 +3502,7 @@ const students = [
   {
     "adm": 1007,
     "dob": 43566,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "NUR BHANU BIBI",
     "father": "SARAKATA ALI",
@@ -3542,7 +3542,7 @@ const students = [
   {
     "adm": 980,
     "dob": 42773,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "AKLIMA KHATUN",
     "father": "ASHRAFUL ISLAM",
@@ -3582,7 +3582,7 @@ const students = [
   {
     "adm": 962,
     "dob": "29-10-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SAHERA KHATUN",
     "father": "SHOHID ALI",
@@ -3620,7 +3620,7 @@ const students = [
   {
     "adm": 975,
     "dob": "20-07-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "RASHIDA KHATUN",
     "father": "KAMRUT ZAMAN",
@@ -3660,7 +3660,7 @@ const students = [
   {
     "adm": 1056,
     "dob": "18-05-2016",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "BILATON NESSA",
     "father": "ISHLAM HOQUE",
@@ -3700,7 +3700,7 @@ const students = [
   {
     "adm": 1057,
     "dob": "16-11-2018",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "AKULA KHATUN",
     "father": "NUR ZAMAL SK",
@@ -3740,7 +3740,7 @@ const students = [
   {
     "adm": 1052,
     "dob": 43562,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "SOBIA KHATUN",
     "father": "SURMAN ALI",
@@ -3777,7 +3777,7 @@ const students = [
   {
     "adm": 1107,
     "dob": 42776,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "RASHIDA KHATUN",
     "father": "HABIBOR RAHMAN",
@@ -3817,7 +3817,7 @@ const students = [
   {
     "adm": 1120,
     "dob": 43079,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "FEROZA KHATUN",
     "father": "ROHOM ALI",
@@ -3857,7 +3857,7 @@ const students = [
   {
     "adm": 948,
     "dob": 43501,
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "MOYNA KHATUN",
     "father": "ASADUL ISLAM",
@@ -3897,7 +3897,7 @@ const students = [
   {
     "adm": 1101,
     "dob": "13-09-2017",
-    "class": "P.P.",
+    "class": "PP",
     "sec": "B",
     "mother": "CHIYER BHANU",
     "father": "KAIMUDDIN",
