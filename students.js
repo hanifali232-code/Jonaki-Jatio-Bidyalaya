@@ -1,4 +1,4 @@
-conts students = [
+const students = [
   {
     "adm": 1066,
     "dob": 44169,
