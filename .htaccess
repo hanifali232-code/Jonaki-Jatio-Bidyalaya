@@ -1,5 +1,16 @@
 Options -Indexes
 RewriteEngine On
+RewriteBase /
+
+# 1. যদি ব্রাউজাৰত /about বুলি লিখে আৰু about.html আছে, তেন্তে about.html খুলিব
+RewriteCond %{REQUEST_FILENAME}!-f
+RewriteCond %{REQUEST_FILENAME}!-d
+RewriteRule ^([^.]+)$ $1.html [NC,L]
+
+# 2. যদি /notice বুলি লিখে, Folder থাকিলেও notice.html টোহে খুলিব (Folder নুখুলে)
+RewriteCond %{DOCUMENT_ROOT}/$1.html -f
+RewriteRule ^(notice|result)/?$ $1.html [NC,L]
+
+# 3. Folder ৰ ভিতৰৰ PDF বোৰ যাতে Direct খোলে
 RewriteCond %{REQUEST_FILENAME} -f
-RewriteRule ^(.+)$ $1.html [L]
-ErrorDocument 404/404.html
+RewriteRule ^ - [L]
