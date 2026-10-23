@@ -29,23 +29,23 @@
   .result-box td{padding:5px 12px; border:1px solid #000; font-size:14px;}
 
 @media print{
-  @page{size:A4; margin:8mm 8mm 8mm 8mm;}
+  @page{size:A4; margin:0mm;}
   body, html{margin:0 !important; padding:0 !important;}
   .search-box, .no-print{display:none !important;}
   .marksheet{
     display:block !important; 
     width:100% !important;
     height:auto !important;
-    min-height:0 !important;
+    min-height:297 !important;
     margin:0 !important;
-    padding:10px 15px !important;
+    padding:8mm 8mm !important;
     border:none !important; 
     box-sizing:border-box !important;
     page-break-after:avoid !important;
     page-break-inside:avoid !important;
     -webkit-print-color-adjust:exact !important; 
     print-color-adjust:exact !important;
-    background-size:cover !important;
+    background-size:100% !important;
     background-position:center top !important;
   }
   .header{padding-bottom:5px !important;}
