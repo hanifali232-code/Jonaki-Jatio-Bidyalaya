@@ -21,7 +21,11 @@
   .marks-table{width:100%; margin-top:15px; border-collapse:collapse;}
   .marks-table th, .marks-table td{border:1px solid #000; padding:6px; text-align:center; font-size:13px;}
   .marks-table th{background:#eee;}
-  .result-box{float:right; border:1px solid #000; margin-top:15px; border-collapse:collapse;}
+  .result-wrapper{display:flex; justify-content:space-between; align-items:flex-start; margin-top:15px; gap:15px;}
+  .grade-table{border-collapse:collapse; border:1px solid #000;}
+  .grade-table th, .grade-table td{border:1px solid #000; padding:5px 12px; font-size:13px; text-align:center;}
+  .grade-table th{background:#eee;}
+  .result-box{border:1px solid #000; border-collapse:collapse; margin-top:0;}
   .result-box td{padding:5px 12px; border:1px solid #000; font-size:14px;}
 @media print{.search-box, .no-print{display:none;} .marksheet{display:block !important; border:none; -webkit-print-color-adjust:exact !important; print-color-adjust:exact !important;}}
 </style>
@@ -52,6 +56,17 @@
     <tr><td><b>Mother's Name</b></td><td id="s_mother" colspan="5"></td></tr>
   </table>
   <table class="marks-table" id="marksTable"></table>
+  <div class="result-wrapper">
+  <table class="grade-table">
+    <tr><th>Percentage</th><th>Grade</th></tr>
+    <tr><td>90% to 100%</td><td>A+</td></tr>
+    <tr><td>80% to 89%</td><td>A</td></tr>
+    <tr><td>70% to 79%</td><td>B+</td></tr>
+    <tr><td>60% to 69%</td><td>B</td></tr>
+    <tr><td>50% to 59%</td><td>C</td></tr>
+    <tr><td>30% to 49%</td><td>D</td></tr>
+    <tr><td>0% to 29%</td><td>-</td></tr>
+  </table>
   <table class="result-box">
     <tr><td><b>Grand Total</b></td><td id="m_total"></td></tr>
     <tr><td><b>Percentage</b></td><td id="m_per"></td></tr>
