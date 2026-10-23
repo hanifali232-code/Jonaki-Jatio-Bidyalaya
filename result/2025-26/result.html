@@ -29,30 +29,29 @@
   .result-box td{padding:5px 12px; border:1px solid #000; font-size:14px;}
 
 @media print{
-  @page{size:A4; margin:0mm;}
-  body, html{margin:0 !important; padding:0 !important;}
-  .search-box, .no-print{display:none !important;}
+  @page{size:A4; margin:10mm 12mm 15mm 12mm;}
+  body, html{margin:0 !important; padding:0 !important; background:white !important;}
+  .search-box, .no-print{display:none !important; height:0 !important; margin:0 !important; padding:0 !important;}
   .marksheet{
-    display:block !important; 
+    display:flex !important; 
+    flex-direction:column !important;
+    justify-content:flex-start !important;
     width:100% !important;
-    height:auto !important;
-    min-height:297 !important;
+    min-height:272mm !important;
     margin:0 !important;
-    padding:8mm 8mm !important;
+    padding:0 !important;
     border:none !important; 
     box-sizing:border-box !important;
-    page-break-after:avoid !important;
-    page-break-inside:avoid !important;
     -webkit-print-color-adjust:exact !important; 
     print-color-adjust:exact !important;
-    background-size:100% !important;
+    background-size:100% 100% !important;
     background-position:center top !important;
   }
   .header{padding-bottom:5px !important;}
-  .header h1{font-size:32px !important;}
-  .header p{font-size:12px !important; line-height:1.3 !important;}
+  .header h1{font-size:28px !important;}
+  .header p{font-size:11px !important; line-height:1.3 !important;}
   .info-table, .marks-table{margin-top:8px !important;}
-}
+  .footer{margin-top:auto !important; padding-top:15px !important;}
 }
 </style>
 </head>
@@ -74,7 +73,6 @@
    <p style="margin:5px 0; text-align:center; line-height:1.5;">SHIMULCHALA, PO : BARKAILA SERSO, PS : FAKIRGANJ<br>DIST.: DHUBRI :: ASSAM :: 783330<br>ESTD. : 2013<br>UDISE+: 1802034137</p>
    <h3 style="margin:5px 0 0 0; text-align:center;">Marks Sheet - 2025-26</h3>
  </div>
- <div style="clear:both;"></div>
   <table class="info-table">
     <tr><td><b>Name of Student</b></td><td id="s_name"></td><td><b>ID No</b></td><td id="s_adm" colspan="3"></td></tr>
     <tr><td><b>Class</b></td><td id="s_class"></td><td><b>Section</b></td><td id="s_sec"></td><td><b>Roll No.</b></td><td id="s_roll"></td></tr>
@@ -102,13 +100,10 @@
   </table>
 </div>
 
-<div style="clear:both;"></div>
-<div style="margin-top:15px;">
+<div class="footer" style="margin-top:auto; padding-top:15px;">
   <p style="font-size:11px; margin:0 0 15px 0;">Note: This is computer generated card, parents can contact admin office for any enquiry within 31 days.</p>
-  
   <div style="display:flex; justify-content:space-between; align-items:flex-end;">
     <p style="margin:0; font-size:13px;">Date : 31 March 2026</p>
-    
     <div style="text-align:center; font-size:13px;">
       <img src="sign.png" class="sing" style="width:130px; height:40px; object-fit:contain;" onerror="this.style.display='none'"><br>
       Signature of Head Master
@@ -116,7 +111,8 @@
   </div>
 </div>
 
-</div> <div class="no-print" style="text-align:center; margin:20px auto;">
+</div> 
+<div class="no-print" style="text-align:center; margin:20px auto;">
   <button onclick="window.print()" style="width:auto; padding:10px 25px; background:#000080; color:white; border:none; border-radius:5px; cursor:pointer;">Print</button> 
   <button onclick="location.reload()" style="width:auto; padding:10px 25px; background:#666; color:white; border:none; border-radius:5px; cursor:pointer; margin-left:10px;">New Search</button>
 </div>
@@ -133,7 +129,6 @@ function getGrade(per, isPass){
   if(per >= 30) return "D";
   return "-";
 }
-
 function checkResult(){
   let cls = document.getElementById('classInput').value.trim();
   let sec = document.getElementById('sectionInput').value.trim();
@@ -141,17 +136,13 @@ function checkResult(){
   let msg = document.getElementById('msg');
   if(!cls || !sec || !roll){ msg.innerText = "Please Select Class, Section and Roll"; return; }
   msg.innerText = "";
-
-  // sec আৰু section দুয়োটাই চাব
   let s = students.find(x => {
     let c1 = String(x.class||"").toUpperCase().trim();
     let s1 = String(x.section || x.sec || "").toUpperCase().trim();
     let r1 = String(x.roll||"").trim();
     return c1 == cls.toUpperCase() && s1 == sec.toUpperCase() && r1 == roll;
   });
-
   if(!s){ msg.innerText = "Result Not Found for ("+cls+" - "+sec+" - "+roll+") Total Loaded: "+students.length; return; }
-  
   document.getElementById('s_name').innerText = s.name;
   document.getElementById('s_adm').innerText = s.adm;
   document.getElementById('s_class').innerText = s.class;
@@ -162,7 +153,6 @@ function checkResult(){
   document.getElementById('s_father').innerText = s.father || '';
   document.getElementById('s_mother').innerText = s.mother || '';
   document.getElementById('s_address').innerText = s.address || '';
-
   let sum = (a,b,c,d) => (Number(a)||0)+(Number(b)||0)+(Number(c)||0)+(Number(d)||0);
   let enT = sum(s.en1,s.en2,s.en3,s.en4), asT = sum(s.as1,s.as2,s.as3,s.as4), mtT = sum(s.mt1,s.mt2,s.mt3,s.mt4), ssT = sum(s.ss1,s.ss2,s.ss3,s.ss4), scT = sum(s.sc1,s.sc2,s.sc3,s.sc4), aagT = sum(s.aag1,s.aag2,s.aag3,s.aag4), hpwT = sum(s.hpw1,s.hpw2,s.hpw3,s.hpw4);
   let grand = enT+asT+mtT+ssT+scT+aagT+hpwT;
@@ -170,7 +160,6 @@ function checkResult(){
   let per = totalFM > 0 ? ((grand / totalFM) * 100) : 0;
   let isPass = per >= 30;
   let grade = getGrade(per, isPass);
-
   document.getElementById('marksTable').innerHTML = `
     <tr><th>Sl</th><th>Subject</th><th>1st Unit</th><th>HY</th><th>2nd Unit</th><th>Annual</th><th>Full Marks</th><th>Obtained</th></tr>
     <tr><td>1</td><td>English</td><td>${s.en1||0}</td><td>${s.en2||0}</td><td>${s.en3||0}</td><td>${s.en4||0}</td><td>${s.enFM||0}</td><td><b>${enT}</b></td></tr>
@@ -182,20 +171,17 @@ function checkResult(){
     <tr><td>7</td><td>Hindi/ Poribesh/ Wood Craft</td><td>${s.hpw1||0}</td><td>${s.hpw2||0}</td><td>${s.hpw3||0}</td><td>${s.hpw4||0}</td><td>${s.hpwFM||0}</td><td><b>${hpwT}</b></td></tr>
     <tr style="background:#eee; font-weight:bold;"><td colspan="6" style="text-align:right;">Total</td><td>${totalFM}</td><td>${grand}</td></tr>
   `;
-
   document.getElementById('m_total').innerText = grand;
   document.getElementById('m_per').innerText = per.toFixed(2) + "%";
   document.getElementById('m_grade').innerText = grade;
   document.getElementById('m_result').innerText = isPass ? "PASS" : "FAIL";
-
   let sumAll = (st) => (Number(st.en1)||0)+(Number(st.en2)||0)+(Number(st.en3)||0)+(Number(st.en4)||0)+(Number(st.as1)||0)+(Number(st.as2)||0)+(Number(st.as3)||0)+(Number(st.as4)||0)+(Number(st.mt1)||0)+(Number(st.mt2)||0)+(Number(st.mt3)||0)+(Number(st.mt4)||0)+(Number(st.sc1)||0)+(Number(st.sc2)||0)+(Number(st.sc3)||0)+(Number(st.sc4)||0)+(Number(st.ss1)||0)+(Number(st.ss2)||0)+(Number(st.ss3)||0)+(Number(st.ss4)||0)+(Number(st.aag1)||0)+(Number(st.aag2)||0)+(Number(st.aag3)||0)+(Number(st.aag4)||0)+(Number(st.hpw1)||0)+(Number(st.hpw2)||0)+(Number(st.hpw3)||0)+(Number(st.hpw4)||0);
   let sameClass = students.filter(x => String(x.class||"").toUpperCase()==s.class.toUpperCase() && String(x.section||x.sec||"").toUpperCase()==(s.section||s.sec||"").toUpperCase());
   sameClass.sort((a,b) => sumAll(b) - sumAll(a));
   let rank = sameClass.findIndex(x => String(x.roll)==String(s.roll)) + 1;
   document.getElementById('m_rank').innerText = rank;
-
   document.getElementById('searchBox').style.display='none';
-  document.getElementById('marksheet').style.display='block';
+  document.getElementById('marksheet').style.display='flex';
 }
 </script>
 </body>
