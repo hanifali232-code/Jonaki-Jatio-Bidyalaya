@@ -12,7 +12,6 @@
   .form-group label{font-size:14px; font-weight:bold; display:block; margin-bottom:5px;}
   select, input{padding:12px; width:100%; box-sizing:border-box; border:1px solid #999; border-radius:5px; font-size:15px;}
   button{padding:12px 20px; background:#000080; color:white; border:none; cursor:pointer; width:100%; border-radius:5px; font-size:16px; margin-top:10px;}
-  button:hover{background:#0000cc;}
   .marksheet{max-width:850px; margin:20px auto; background:#ffffff url('https://raw.githubusercontent.com/hanifali232-code/Jonaki-Jatio-Bidyalaya/main/images/bg.jpg') no-repeat center center; background-size:cover; padding:20px; border:2px solid #000; display:none; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
   .header{text-align:center; border-bottom:2px solid #000; padding-bottom:10px;}
   .header h1{color:#000080; margin:0; font-size:36px;}
@@ -25,17 +24,15 @@
   .grade-table{border-collapse:collapse; border:1px solid #000;}
   .grade-table th, .grade-table td{border:1px solid #000; padding:5px 12px; font-size:13px; text-align:center;}
   .grade-table th{background:#eee;}
-  .result-box{border:1px solid #000; border-collapse:collapse; margin-top:0;}
+  .result-box{border:1px solid #000; border-collapse:collapse;}
   .result-box td{padding:5px 12px; border:1px solid #000; font-size:14px;}
 
 @media print{
-  @page{size:A4; margin:10mm 12mm 15mm 12mm;}
+  @page{size:A4; margin:10mm 12mm 12mm 12mm;}
   body, html{margin:0 !important; padding:0 !important; background:white !important;}
-  .search-box, .no-print{display:none !important; height:0 !important; margin:0 !important; padding:0 !important;}
+  .search-box, .no-print{display:none !important;}
   .marksheet{
-    display:flex !important; 
-    flex-direction:column !important;
-    justify-content:flex-start !important;
+    display:block !important; 
     width:100% !important;
     min-height:272mm !important;
     margin:0 !important;
@@ -45,13 +42,18 @@
     -webkit-print-color-adjust:exact !important; 
     print-color-adjust:exact !important;
     background-size:100% 100% !important;
-    background-position:center top !important;
   }
-  .header{padding-bottom:5px !important;}
-  .header h1{font-size:28px !important;}
-  .header p{font-size:11px !important; line-height:1.3 !important;}
-  .info-table, .marks-table{margin-top:8px !important;}
-  .footer{margin-top:auto !important; padding-top:15px !important;}
+  /* === আপুনি বিচৰা গেপবোৰ === */
+  .header{padding-bottom:12px !important;}
+  .header h1{font-size:30px !important;}
+  .header .school-address{margin-top:6px !important; line-height:1.4 !important;}
+  .header .sheet-title{margin-top:18px !important; padding-top:8px !important; display:block !important;}
+  
+  .info-table{margin-top:22px !important;}
+  .marks-table{margin-top:24px !important;}
+  .result-wrapper{margin-top:28px !important;}
+  .footer-note{margin-top:32px !important;}
+  .footer-sign{margin-top:30px !important;}
 }
 </style>
 </head>
@@ -70,9 +72,10 @@
   <div class="header" style="position:relative; text-align:center; border-bottom:2px solid #000; padding-bottom:10px;">
    <span style="position:absolute; left:0; top:50%; transform:translateY(-50%);"><img src="logo.png" class="logo" style="width:100px; height:100px; object-fit:contain;" onerror="this.style.display='none'"></span>
    <h1 style="margin:0; text-align:center; font-size:36px; color:#000080;">JONAKI JATIO BIDYALAYA</h1>
-   <p style="margin:5px 0; text-align:center; line-height:1.5;">SHIMULCHALA, PO : BARKAILA SERSO, PS : FAKIRGANJ<br>DIST.: DHUBRI :: ASSAM :: 783330<br>ESTD. : 2013<br>UDISE+: 1802034137</p>
-   <h3 style="margin:5px 0 0 0; text-align:center;">Marks Sheet - 2025-26</h3>
+   <p class="school-address" style="margin:5px 0; text-align:center; line-height:1.5;">SHIMULCHALA, PO : BARKAILA SERSO, PS : FAKIRGANJ<br>DIST.: DHUBRI :: ASSAM :: 783330<br>ESTD. : 2013<br>UDISE+: 1802034137</p>
+   <h3 class="sheet-title" style="margin:5px 0 0 0; text-align:center;">Marks Sheet - 2025-26</h3>
  </div>
+
   <table class="info-table">
     <tr><td><b>Name of Student</b></td><td id="s_name"></td><td><b>ID No</b></td><td id="s_adm" colspan="3"></td></tr>
     <tr><td><b>Class</b></td><td id="s_class"></td><td><b>Section</b></td><td id="s_sec"></td><td><b>Roll No.</b></td><td id="s_roll"></td></tr>
@@ -80,38 +83,42 @@
     <tr><td><b>Father's Name</b></td><td id="s_father" colspan="3"></td><td><b>Address</b></td><td id="s_address" colspan="2"></td></tr>
     <tr><td><b>Mother's Name</b></td><td id="s_mother" colspan="5"></td></tr>
   </table>
-  <table class="marks-table" id="marksTable"></table>
-  <div class="result-wrapper">
-  <table class="grade-table">
-    <tr><th>Percentage</th><th>Grade</th></tr>
-    <tr><td>90% to 100%</td><td>A+</td></tr>
-    <tr><td>80% to 89%</td><td>A</td></tr>
-    <tr><td>70% to 79%</td><td>B+</td></tr>
-    <tr><td>60% to 69%</td><td>B</td></tr>
-    <tr><td>50% to 59%</td><td>C</td></tr>
-    <tr><td>30% to 49%</td><td>D</td></tr>
-  </table>
-  <table class="result-box">
-    <tr><td><b>Grand Total</b></td><td id="m_total"></td></tr>
-    <tr><td><b>Percentage</b></td><td id="m_per"></td></tr>
-    <tr><td><b>Grade</b></td><td id="m_grade"></td></tr>
-    <tr><td><b>Result</b></td><td id="m_result"></td></tr>
-    <tr><td><b>Rank</b></td><td id="m_rank"></td></tr>
-  </table>
-</div>
 
-<div class="footer" style="margin-top:auto; padding-top:15px;">
-  <p style="font-size:11px; margin:0 0 15px 0;">Note: This is computer generated card, parents can contact admin office for any enquiry within 31 days.</p>
-  <div style="display:flex; justify-content:space-between; align-items:flex-end;">
-    <p style="margin:0; font-size:13px;">Date : 31 March 2026</p>
-    <div style="text-align:center; font-size:13px;">
-      <img src="sign.png" class="sing" style="width:130px; height:40px; object-fit:contain;" onerror="this.style.display='none'"><br>
-      Signature of Head Master
-    </div>
+  <table class="marks-table" id="marksTable"></table>
+
+  <div class="result-wrapper">
+    <table class="grade-table">
+      <tr><th>Percentage</th><th>Grade</th></tr>
+      <tr><td>90% to 100%</td><td>A+</td></tr>
+      <tr><td>80% to 89%</td><td>A</td></tr>
+      <tr><td>70% to 79%</td><td>B+</td></tr>
+      <tr><td>60% to 69%</td><td>B</td></tr>
+      <tr><td>50% to 59%</td><td>C</td></tr>
+      <tr><td>30% to 49%</td><td>D</td></tr>
+    </table>
+    <table class="result-box">
+      <tr><td><b>Grand Total</b></td><td id="m_total"></td></tr>
+      <tr><td><b>Percentage</b></td><td id="m_per"></td></tr>
+      <tr><td><b>Grade</b></td><td id="m_grade"></td></tr>
+      <tr><td><b>Result</b></td><td id="m_result"></td></tr>
+      <tr><td><b>Rank</b></td><td id="m_rank"></td></tr>
+    </table>
   </div>
-</div>
+
+  <div class="footer-note" style="margin-top:15px;">
+    <p style="font-size:11px; margin:0 0 15px 0;">Note: This is computer generated card, parents can contact admin office for any enquiry within 31 days.</p>
+  </div>
+
+  <div class="footer-sign" style="display:flex; justify-content:space-between; align-items:flex-end; margin-top:15px;">
+      <p style="margin:0; font-size:13px;">Date : 31 March 2026</p>
+      <div style="text-align:center; font-size:13px;">
+        <img src="sign.png" class="sing" style="width:130px; height:40px; object-fit:contain;" onerror="this.style.display='none'"><br>
+        Signature of Head Master
+      </div>
+  </div>
 
 </div> 
+
 <div class="no-print" style="text-align:center; margin:20px auto;">
   <button onclick="window.print()" style="width:auto; padding:10px 25px; background:#000080; color:white; border:none; border-radius:5px; cursor:pointer;">Print</button> 
   <button onclick="location.reload()" style="width:auto; padding:10px 25px; background:#666; color:white; border:none; border-radius:5px; cursor:pointer; margin-left:10px;">New Search</button>
@@ -142,7 +149,7 @@ function checkResult(){
     let r1 = String(x.roll||"").trim();
     return c1 == cls.toUpperCase() && s1 == sec.toUpperCase() && r1 == roll;
   });
-  if(!s){ msg.innerText = "Result Not Found for ("+cls+" - "+sec+" - "+roll+") Total Loaded: "+students.length; return; }
+  if(!s){ msg.innerText = "Result Not Found"; return; }
   document.getElementById('s_name').innerText = s.name;
   document.getElementById('s_adm').innerText = s.adm;
   document.getElementById('s_class').innerText = s.class;
@@ -181,7 +188,7 @@ function checkResult(){
   let rank = sameClass.findIndex(x => String(x.roll)==String(s.roll)) + 1;
   document.getElementById('m_rank').innerText = rank;
   document.getElementById('searchBox').style.display='none';
-  document.getElementById('marksheet').style.display='flex';
+  document.getElementById('marksheet').style.display='block';
 }
 </script>
 </body>
