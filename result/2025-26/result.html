@@ -28,7 +28,7 @@
   .result-box td{padding:5px 12px; border:1px solid #000; font-size:14px;}
 
 @media print{
-  @page{size:A4; margin:10mm 0mm 12mm 0mm;}
+  @page{size:A4; margin:10mm 12mm 12mm 12mm;}
   body, html{margin:0 !important; padding:0 !important; background:white !important;}
   .search-box, .no-print{display:none !important;}
   .marksheet{
@@ -36,12 +36,13 @@
     width:100% !important;
     min-height:272mm !important;
     margin:0 !important;
-    padding:0 !important;
-    border:none !important; 
+    padding:10mm 10mm 8mm10mm !important;
+    border:1.8px solid #000 !important; 
     box-sizing:border-box !important;
     -webkit-print-color-adjust:exact !important; 
     print-color-adjust:exact !important;
     background-size:100% 100% !important;
+    background-origin:padding-box !important;
   }
   /* === আপুনি বিচৰা গেপবোৰ === */
   .header{padding-bottom:12px !important;}
