@@ -13,7 +13,7 @@
   select, input{padding:12px; width:100%; box-sizing:border-box; border:1px solid #999; border-radius:5px; font-size:15px;}
   button{padding:12px 20px; background:#000080; color:white; border:none; cursor:pointer; width:100%; border-radius:5px; font-size:16px; margin-top:10px;}
   .marksheet{max-width:850px; margin:20px auto; background:#ffffff url('https://raw.githubusercontent.com/hanifali232-code/Jonaki-Jatio-Bidyalaya/main/images/bg.jpg') no-repeat center center; background-size:cover; padding:20px; border:2px solid #000; display:none; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
-  .header{text-align:center; border-bottom:2px solid #000; padding-bottom:10px;}
+  .header{text-align:center; padding-bottom:10px;}
   .header h1{color:#000080; margin:0; font-size:36px;}
   .info-table{width:100%; margin-top:15px; border-collapse:collapse;}
   .info-table td{padding:5px 8px; font-size:13px; border:1px solid #000;}
@@ -36,8 +36,8 @@
     width:100% !important;
     min-height:272mm !important;
     margin:0 !important;
-    padding:10mm 10mm 8mm10mm !important;
-    border:1.8px solid #000 !important; 
+    padding:10mm 10mm 8mm 10mm !important;
+    border:4px double #8B0000 !important; 
     box-sizing:border-box !important;
     -webkit-print-color-adjust:exact !important; 
     print-color-adjust:exact !important;
@@ -45,10 +45,10 @@
     background-origin:padding-box !important;
   }
   /* === আপুনি বিচৰা গেপবোৰ === */
-  .header{padding-bottom:12px !important;}
+  .header{padding-bottom:12px !important; border-bottom:none !important;}
   .header h1{font-size:30px !important;}
   .header .school-address{margin-top:6px !important; line-height:1.4 !important;}
-  .header .sheet-title{margin-top:18px !important; padding-top:8px !important; display:block !important;}
+  .header .sheet-title{margin-top:18px !important; padding-top:8px !important; display:block !important; border:none !important;}
   
   .info-table{margin-top:22px !important;}
   .marks-table{margin-top:24px !important;}
@@ -70,7 +70,7 @@
 </div>
 
 <div class="marksheet" id="marksheet">
-  <div class="header" style="position:relative; text-align:center; border-bottom:2px solid #000; padding-bottom:10px;">
+  <div class="header" style="position:relative; text-align:center; padding-bottom:10px;">
    <span style="position:absolute; left:0; top:50%; transform:translateY(-50%);"><img src="logo.png" class="logo" style="width:100px; height:100px; object-fit:contain;" onerror="this.style.display='none'"></span>
    <h1 style="margin:0; text-align:center; font-size:36px; color:#000080;">JONAKI JATIO BIDYALAYA</h1>
    <p class="school-address" style="margin:5px 0; text-align:center; line-height:1.5;">SHIMULCHALA, PO : BARKAILA SERSO, PS : FAKIRGANJ<br>DIST.: DHUBRI :: ASSAM :: 783330<br>ESTD. : 2013<br>UDISE+: 1802034137</p>
@@ -84,9 +84,7 @@
     <tr><td><b>Father's Name</b></td><td id="s_father" colspan="3"></td><td><b>Address</b></td><td id="s_address" colspan="2"></td></tr>
     <tr><td><b>Mother's Name</b></td><td id="s_mother" colspan="5"></td></tr>
   </table>
-
   <table class="marks-table" id="marksTable"></table>
-
   <div class="result-wrapper">
     <table class="grade-table">
       <tr><th>Percentage</th><th>Grade</th></tr>
@@ -105,11 +103,9 @@
       <tr><td><b>Rank</b></td><td id="m_rank"></td></tr>
     </table>
   </div>
-
   <div class="footer-note" style="margin-top:15px;">
     <p style="font-size:11px; margin:0 0 15px 0;">Note: This is computer generated card, parents can contact admin office for any enquiry within 31 days.</p>
   </div>
-
   <div class="footer-sign" style="display:flex; justify-content:space-between; align-items:flex-end; margin-top:15px;">
       <p style="margin:0; font-size:13px;">Date : 31 March 2026</p>
       <div style="text-align:center; font-size:13px;">
@@ -117,14 +113,11 @@
         Signature of Head Master
       </div>
   </div>
-
 </div> 
-
 <div class="no-print" style="text-align:center; margin:20px auto;">
   <button onclick="window.print()" style="width:auto; padding:10px 25px; background:#000080; color:white; border:none; border-radius:5px; cursor:pointer;">Print</button> 
   <button onclick="location.reload()" style="width:auto; padding:10px 25px; background:#666; color:white; border:none; border-radius:5px; cursor:pointer; margin-left:10px;">New Search</button>
 </div>
-
 <script src="students.js"></script>
 <script>
 function getGrade(per, isPass){
