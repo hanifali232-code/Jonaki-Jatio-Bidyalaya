@@ -596,3 +596,41 @@ footer {
   50%{opacity:0.3;}
   100%{opacity:1;}
 }
+/* --- প্ৰধান শিক্ষক + সঞ্চালক বাওঁ-সোঁ কৰিবলৈ --- */
+.two-message-wrap{
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+  align-items: stretch;
+}
+
+.two-message-wrap .principal-section{
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.two-message-wrap .principal-box{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.two-message-wrap .principal-message{
+  text-align: left;
+  width: 100%;
+}
+
+/* মোবাইলত আগৰ দৰে ওপৰ-তল হৈ যাব */
+@media (max-width: 768px){
+  .two-message-wrap{
+    flex-direction: column;
+  }
+}
